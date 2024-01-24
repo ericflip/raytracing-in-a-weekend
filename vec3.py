@@ -47,8 +47,15 @@ class Vec3:
     def unit_vec(self):
         return Vec3.from_numpy(self.vec / self.length())
 
+    def dot(self, other: "Vec3"):
+        return dot(self, other)
+
     def __str__(self):
         return f"<{self.x}, {self.y}, {self.z}>"
+
+
+def dot(vec: Vec3, other: Vec3):
+    return (vec.vec * other.vec).sum()
 
 
 if __name__ == "__main__":
