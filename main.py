@@ -1,9 +1,12 @@
+from color import Color, format
 from tqdm import tqdm
 
 if __name__ == "__main__":
+    # image
     W = 256
     H = 256
 
+    # render
     with open("output.ppm", "w") as f:
         f.write("P3\n")
         f.write(f"{W} {H}\n")
@@ -14,7 +17,6 @@ if __name__ == "__main__":
                 g = j / (H - 1)
                 b = 0
 
-                r = int(r * 255)
-                g = int(g * 255)
+                color = Color(r, g, b)
 
-                f.write(f"{r} {g} {b}\n")
+                f.write(f"{format(color)}\n")
