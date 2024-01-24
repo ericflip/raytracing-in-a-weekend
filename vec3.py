@@ -29,6 +29,9 @@ class Vec3:
     def __add__(self, other: "Vec3"):
         return Vec3.from_numpy(self.vec + other.vec)
 
+    def __sub__(self, other: "Vec3"):
+        return Vec3.from_numpy(self.vec - other.vec)
+
     def __mul__(self, scalar: float):
         return Vec3.from_numpy(scalar * self.vec)
 
